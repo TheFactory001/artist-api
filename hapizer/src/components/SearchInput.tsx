@@ -9,26 +9,24 @@ interface Props {
 }
 
 const SearchInput = ({ onSearchArtist }: Props) => {
-  const [artist, setArtist] = useState<Artist>({
-    id: 0,
-    name: "HERE",
-    image_link: "",
-    top_tracks: [],
-  });
   const searched_artist_Ref = useRef<HTMLInputElement>(null);
   return (
     <form
       action=""
-      onSubmit={(event) => {
+      onSubmit={async (event) => {
         event.preventDefault();
         if (searched_artist_Ref.current) {
-          apiClient
+          const my_artist = await apiClient
             .post("/get-artist", {
               searched_artist: searched_artist_Ref.current.value,
             })
-            .then((res) => setArtist(res.data));
+            .then((res) => {
+              return res.data;
+            });
+
+          // const out_artist = await my_artist;
+          onSearchArtist(my_artist);
         }
-        onSearchArtist(artist);
       }}
     >
       <InputGroup>

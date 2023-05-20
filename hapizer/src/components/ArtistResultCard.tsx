@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useArtists, { Artist } from "../hooks/useArtists";
+import { Artist } from "../hooks/useArtists";
 
 interface Props {
   res_artist: Artist;

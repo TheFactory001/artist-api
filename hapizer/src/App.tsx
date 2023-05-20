@@ -24,7 +24,7 @@ function App() {
       >
         <GridItem area="nav">
           <NavBar
-            onSearchArtist={(artist) => {
+            onSearchArtist={async (artist) => {
               setArtist(artist);
               console.log(artist);
             }}
