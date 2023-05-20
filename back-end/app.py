@@ -93,7 +93,7 @@ def find_artist():
             artist_info['top_5_tracks'] = top_5_tracks_info
             return_data.append(artist_info)
 
-            return return_data
+            return artist_info
         else:
             artist_info['artist_name'] = f"{artist_name} : Artist not found"
 

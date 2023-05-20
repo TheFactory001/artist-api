@@ -8,7 +8,7 @@ interface Track {
   }
   export interface Artist {
     id: number;
-    title: string;
+    name: string;
     image_link: string;
     top_tracks: Track[];
   }
@@ -20,7 +20,7 @@ interface Props {
 const useArtists= ( {searched_artist}: Props)=>{
     const [artist, setArtist] = useState<Artist>({
         id:0,
-        title:"HERE",
+        name:"HERE",
         image_link:"",
         top_tracks:[]
     });

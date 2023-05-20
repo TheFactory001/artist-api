@@ -1,8 +1,9 @@
 import { GridItem, HStack, Switch, Text } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
+import { Artist } from "../hooks/useArtists";
 interface Props {
-  onSearchArtist: (searchText: string) => void;
+  onSearchArtist: (artist: Artist) => void;
 }
 
 const NavBar = ({ onSearchArtist }: Props) => {

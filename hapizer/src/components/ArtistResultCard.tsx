@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import useArtists from "../hooks/useArtists";
+import useArtists, { Artist } from "../hooks/useArtists";
 
 interface Props {
-  searched_text: string;
+  res_artist: Artist;
 }
 
-const ArtistResultCard = ({ searched_text }: Props) => {
-  const { artist, error } = useArtists({ searched_artist: searched_text });
+const ArtistResultCard = ({ res_artist }: Props) => {
   return (
     <div>
-      <div>{searched_text}</div>
-      <div>Twice {artist.title}</div>
+      <div>Twice {res_artist.name}</div>
     </div>
   );
 };

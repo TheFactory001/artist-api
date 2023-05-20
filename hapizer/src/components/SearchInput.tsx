@@ -1,12 +1,20 @@
 import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { BsSearch } from "react-icons/bs";
+import apiClient from "../services/api-client";
+import { Artist } from "../hooks/useArtists";
 
 interface Props {
-  onSearchArtist: (searchText: string) => void;
+  onSearchArtist: (artist: Artist) => void;
 }
 
 const SearchInput = ({ onSearchArtist }: Props) => {
+  const [artist, setArtist] = useState<Artist>({
+    id: 0,
+    name: "HERE",
+    image_link: "",
+    top_tracks: [],
+  });
   const searched_artist_Ref = useRef<HTMLInputElement>(null);
   return (
     <form
@@ -14,8 +22,13 @@ const SearchInput = ({ onSearchArtist }: Props) => {
       onSubmit={(event) => {
         event.preventDefault();
         if (searched_artist_Ref.current) {
-          onSearchArtist(searched_artist_Ref.current.value);
+          apiClient
+            .post("/get-artist", {
+              searched_artist: searched_artist_Ref.current.value,
+            })
+            .then((res) => setArtist(res.data));
         }
+        onSearchArtist(artist);
       }}
     >
       <InputGroup>

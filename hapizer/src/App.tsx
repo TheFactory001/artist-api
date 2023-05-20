@@ -10,6 +10,12 @@ import ArtistResultCard from "./components/ArtistResultCard";
 function App() {
   const [count, setCount] = useState(0);
   const [searchedArtist, setSearchedArtist] = useState("");
+  const [artist, setArtist] = useState<Artist>({
+    id: 0,
+    name: "HERE",
+    image_link: "",
+    top_tracks: [],
+  });
 
   return (
     <>
@@ -18,14 +24,17 @@ function App() {
       >
         <GridItem area="nav">
           <NavBar
-            onSearchArtist={(searchText) => setSearchedArtist(searchText)}
+            onSearchArtist={(artist) => {
+              setArtist(artist);
+              console.log(artist);
+            }}
           />
         </GridItem>
         <GridItem bg="red" area="aside">
           ASIDE
         </GridItem>
         <GridItem bg="yellow" minHeight={20} area="artist-result">
-          <ArtistResultCard searched_text={searchedArtist} />
+          <ArtistResultCard res_artist={artist} />
         </GridItem>
         <GridItem bg="orange" area="recent-searches">
           Recent
