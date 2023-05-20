@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import apiClient from "../services/api-client";
+import { Input } from "@chakra-ui/react";
 interface Artist {
   id: number;
   name: string;
@@ -22,6 +23,11 @@ const SearchBar = () => {
   const artist_ref = useRef<HTMLInputElement>(null);
   return (
     <>
+      <Input
+        borderRadius="20px"
+        placeholder="Search Artist......"
+        variant={"filled"}
+      />
       <form
         action=""
         onSubmit={(event) => {

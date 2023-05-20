@@ -1,12 +1,15 @@
 import { GridItem, HStack, Switch, Text } from "@chakra-ui/react";
-import React from "react";
-import SearchBar from "./SearchBar";
 import ColorModeSwitch from "./ColorModeSwitch";
+import SearchInput from "./SearchInput";
+interface Props {
+  onSearchArtist: (searchText: string) => void;
+}
 
-const NavBar = () => {
+const NavBar = ({ onSearchArtist }: Props) => {
   return (
-    <HStack justifyContent={"space-between"} padding="10px 20px">
+    <HStack padding="10px 20px">
       <Text>Hapizer</Text>
+      <SearchInput onSearchArtist={onSearchArtist} />
       <ColorModeSwitch />
     </HStack>
   );
