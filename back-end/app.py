@@ -33,17 +33,18 @@ def home():
             top_5_tracks = requests.get(
                 f'https://api.deezer.com/artist/{artist_id}/top?limit=5').json()['data']
             # print(top_5_tracks)
-            print(artist_info)
-            top_5_tracks_info = {'tracks_title': [], 'tracks_audio': []}
-            top_5_tracks_title = []
-            top_5_tracks_audio_preview = []
-            for each_track_data in top_5_tracks:
-                top_5_tracks_title.append(each_track_data['title'])
-                top_5_tracks_audio_preview.append(each_track_data['preview'])
 
-            top_5_tracks_info['tracks_title'] = top_5_tracks_title
-            top_5_tracks_info['tracks_audio'] = top_5_tracks_audio_preview
-            print(top_5_tracks_info)
+            top_5_tracks_info = []
+
+            track = {'title': "", 'preview': ""}
+
+            for each_track_data in top_5_tracks:
+                track = {'title': "", 'preview': ""}
+                track['title'] = each_track_data['title']
+                track['preview'] = each_track_data['preview']
+                track['image'] = each_track_data['album']['cover']
+                top_5_tracks_info.append(track)
+
             artist_info['top_5_tracks'] = top_5_tracks_info
 
             return render_template('index.html', artist_info=artist_info)
@@ -78,18 +79,18 @@ def find_artist():
             artist_id = artist_details['id']
             top_5_tracks = requests.get(
                 f'https://api.deezer.com/artist/{artist_id}/top?limit=5').json()['data']
-            # print(top_5_tracks)
-            print(artist_info)
-            top_5_tracks_info = {'tracks_title': [], 'tracks_audio': []}
-            top_5_tracks_title = []
-            top_5_tracks_audio_preview = []
-            for each_track_data in top_5_tracks:
-                top_5_tracks_title.append(each_track_data['title'])
-                top_5_tracks_audio_preview.append(each_track_data['preview'])
 
-            top_5_tracks_info['tracks_title'] = top_5_tracks_title
-            top_5_tracks_info['tracks_audio'] = top_5_tracks_audio_preview
-            print(top_5_tracks_info)
+            print(top_5_tracks)
+            # print(artist_info)
+            top_5_tracks_info = []
+
+            for each_track_data in top_5_tracks:
+                track = {'title': "", 'preview': ""}
+                track['title'] = each_track_data['title']
+                track['preview'] = each_track_data['preview']
+                # track['color'] = 'black'
+                top_5_tracks_info.append(track)
+
             artist_info['top_5_tracks'] = top_5_tracks_info
             return_data.append(artist_info)
 

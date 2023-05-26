@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import apiClient from "../services/api-client";
 import { Input } from "@chakra-ui/react";
+import { Track } from "../hooks/useArtists";
 interface Artist {
   id: number;
   name: string;
   image: string;
+  top_5_tracks: Track[];
 }
 
 const SearchBar = () => {
   const [searchedArtist, setSearchArtist] = useState("");
   const [artist, setArtist] = useState<Artist[]>([
-    { id: 0, name: "none", image: "none" },
+    { id: 0, name: "none", image: "none", top_5_tracks: [] },
   ]);
   function send_search() {
     apiClient

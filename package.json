@@ -5,6 +5,7 @@
     "@emotion/styled": "^11.11.0",
     "axios": "^1.4.0",
     "framer-motion": "^10.12.10",
+    "react-h5-audio-player": "^3.8.6",
     "react-icons": "^4.8.0"
   }
 }

@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 
-interface Track {
+export interface Track {
     title: string;
     id: number;
-    demo_link: string;
+    preview: string;
+    color:string
   }
   export interface Artist {
     id: number;
     name: string;
-    image_link: string;
-    top_tracks: Track[];
+    image: string;
+    top_5_tracks: Track[];
   }
 
 
