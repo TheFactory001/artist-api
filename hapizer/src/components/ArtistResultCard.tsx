@@ -10,7 +10,14 @@ const ArtistResultCard = ({ res_artist }: Props) => {
   return (
     <VStack height={250} justifyContent={"space-between"}>
       <Image src={res_artist.image} boxSize={200} borderRadius={50} />
-      <Text color={"#D9D9D9"}>{res_artist.name}</Text>
+      <Text
+        color={"#D9D9D9"}
+        fontFamily={"Sofadi One"}
+        fontStyle={"normal"}
+        fontSize={"16px"}
+      >
+        {res_artist.name}
+      </Text>
     </VStack>
 
     // <div>

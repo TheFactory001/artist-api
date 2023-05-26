@@ -2,7 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import ArtistCard from "./components/ArtistCard";
 import SearchBar from "./components/SearchBar";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, HStack, Text } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import { Artist } from "./hooks/useArtists";
 import ArtistResultCard from "./components/ArtistResultCard";
@@ -10,6 +10,7 @@ import ArtistResultGrid from "./components/ArtistResultGrid";
 import SideCard from "./components/SideCard";
 import "./components/Styles/App.css";
 import RecentArtist from "./components/RecentArtist";
+import ColorModeSwitch from "./components/ColorModeSwitch";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,10 +26,24 @@ function App() {
     <>
       <div className="container">
         <Grid
-          templateAreas={`"nav nav" "aside artist-result" "aside recent-searches"`}
+          templateAreas={`"header header" "nil nav" "aside artist-result" "aside recent-searches"`}
           padding={50}
-          gap="50px"
+          paddingTop={"20px"}
+          gap="25px"
         >
+          <GridItem area="header">
+            <HStack justifyContent={"space-between"} paddingEnd={"25px"}>
+              <Text
+                color={"#D9D9D9"}
+                fontSize={"30px"}
+                fontFamily={" Shadows Into Light Two"}
+                lineHeight={"44px"}
+              >
+                HAPIZER
+              </Text>
+              <ColorModeSwitch />
+            </HStack>
+          </GridItem>
           <GridItem area="nav">
             <NavBar
               onSearchArtist={async (artist) => {

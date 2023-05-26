@@ -53,6 +53,7 @@ const ArtistResultTracks = ({ res_tracks }: Props) => {
         width={200}
         height={"100%"}
         borderRight={" 2px "}
+        borderRightColor={"#5F3A3A"}
         display={"flex"}
         flexDirection={"column"}
         justifyContent={"space-between"}
@@ -82,9 +83,14 @@ const ArtistResultTracks = ({ res_tracks }: Props) => {
           controls
           src={res_tracks.length > 0 ? res_tracks[index].preview : ""}
         ></audio>
-        <Text id="selectedTrackTitle">
-          {res_tracks.length > 0 ? res_tracks[index].title : ""}
-        </Text>
+        <a
+          target="blank"
+          href={res_tracks.length > 0 ? res_tracks[index].link : ""}
+        >
+          <Text id="selectedTrackTitle">
+            {res_tracks.length > 0 ? res_tracks[index].title : ""}
+          </Text>
+        </a>
       </VStack>
     </Card>
   );

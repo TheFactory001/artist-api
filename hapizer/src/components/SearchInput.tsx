@@ -1,6 +1,12 @@
-import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
+import {
+  Button,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  InputRightElement,
+} from "@chakra-ui/react";
 import { useRef, useState } from "react";
-import { BsSearch } from "react-icons/bs";
+import { BsArrowBarRight, BsSearch } from "react-icons/bs";
 import apiClient from "../services/api-client";
 import { Artist } from "../hooks/useArtists";
 
@@ -29,14 +35,20 @@ const SearchInput = ({ onSearchArtist }: Props) => {
         }
       }}
     >
-      <InputGroup>
+      <InputGroup background={" rgba(219, 209, 209, 0.12"}>
         <InputLeftElement children={<BsSearch />} />
+
         <Input
           ref={searched_artist_Ref}
-          borderRadius={20}
-          placeholder="Search Artist...."
+          borderRadius={"10px"}
+          placeholder="Search Artist..."
           variant={"filled"}
+          height={"50px"}
+          width={"600px"}
         />
+        <Button type="submit" height={"50px"} marginLeft={"50px"}>
+          Search Artist
+        </Button>
       </InputGroup>
     </form>
   );

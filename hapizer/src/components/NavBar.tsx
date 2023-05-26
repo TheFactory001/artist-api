@@ -9,9 +9,7 @@ interface Props {
 const NavBar = ({ onSearchArtist }: Props) => {
   return (
     <HStack padding="10px 20px">
-      <Text>Hapizer</Text>
       <SearchInput onSearchArtist={onSearchArtist} />
-      <ColorModeSwitch />
     </HStack>
   );
 };

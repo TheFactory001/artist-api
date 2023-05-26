@@ -6,7 +6,8 @@ export interface Track {
     id: number;
     preview: string;
     color:string;
-    cover: string
+    cover: string;
+    link:string
   }
   export interface Artist {
     id: number;

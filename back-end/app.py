@@ -80,7 +80,6 @@ def find_artist():
             top_5_tracks = requests.get(
                 f'https://api.deezer.com/artist/{artist_id}/top?limit=5').json()['data']
 
-            print(top_5_tracks)
             # print(artist_info)
             top_5_tracks_info = []
 
@@ -88,7 +87,8 @@ def find_artist():
                 track = {'title': "", 'preview': ""}
                 track['title'] = each_track_data['title']
                 track['preview'] = each_track_data['preview']
-                track['cover'] = each_track_data['album']['cover']
+                track['link'] = each_track_data['link']
+                track['cover'] = each_track_data['album']['cover_small']
                 # track['color'] = 'black'
                 top_5_tracks_info.append(track)
 
