@@ -42,7 +42,7 @@ def home():
                 track = {'title': "", 'preview': ""}
                 track['title'] = each_track_data['title']
                 track['preview'] = each_track_data['preview']
-                track['image'] = each_track_data['album']['cover']
+                track['cover'] = each_track_data['album']['cover']
                 top_5_tracks_info.append(track)
 
             artist_info['top_5_tracks'] = top_5_tracks_info
@@ -88,6 +88,7 @@ def find_artist():
                 track = {'title': "", 'preview': ""}
                 track['title'] = each_track_data['title']
                 track['preview'] = each_track_data['preview']
+                track['cover'] = each_track_data['album']['cover']
                 # track['color'] = 'black'
                 top_5_tracks_info.append(track)
 

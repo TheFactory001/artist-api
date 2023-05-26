@@ -5,7 +5,8 @@ export interface Track {
     title: string;
     id: number;
     preview: string;
-    color:string
+    color:string;
+    cover: string
   }
   export interface Artist {
     id: number;
