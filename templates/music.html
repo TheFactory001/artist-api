@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='music.css') }}">
+</head>    
+
+    <body>
+        <form action="/music" method="POST" >
+            <div id="music">
+                <h3>ENTER VALUES</h3> 
+            <label for="artist">Artist</label>
+            <input id="artist" name="artist" type="text">
+            <Button id="submitForm">Get Artist Details</Button>
+        </div>
+    </form>
+</body>
+</html>
