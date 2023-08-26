@@ -1,7 +1,85 @@
+
+.navibar{
+    background-color:rgb(124, 57, 124);
+    display: flex;
+}
+ 
+
 #music {
-    background-color: aliceblue;
+    text-align: center;
+    margin: 0px 30px;
+    padding: 25px;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+    box-align: center;   
 }
 
 #music h3 {
     font-family: calibri;
+}
+
+#musicinfo {
+    margin: 50px 6 0px;
+    padding: 25px;
+    background-color: whitesmoke;
+}
+
+#moremusic {
+    height: 200px;
+    width: 90%;
+}
+
+img {
+    width: 750px;
+    height: 250px;
+    border: 1px solid #000;
+    margin: 10px 0;
+    object-fit: fill;
+    text-align: center;
+    box-align: center;
+  }
+
+.top{
+    justify-content: space-between;
+    margin: 5px 50px;
+    padding: 10px; 
+}
+
+#moremusic p
+ {
+    font-family: calibri;
+}
+
+.player
+{
+    position: relative;
+    width: 400px;
+    min-height: 50px;
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 80px;
+    padding: 20px 30px;
+    
+} 
+
+.btns
+{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.btns span
+{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background: gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
 }
